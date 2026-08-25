@@ -1,0 +1,35 @@
+[ruff]
+# Target Python version (affects which modern syntax rules are enforced)
+# target-version = "py311"
+
+line-length = 1000
+
+exclude = [".git", ".venv", "__pycache__", "build", "dist"]
+
+[lint]
+select = [
+	"E",
+	"W",
+	"F",
+	"I",
+	"B",
+	"C4",
+	"UP",
+]
+
+ignore = [
+	"E501",
+]
+
+fixable = ["ALL"]
+unfixable = []
+
+[lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"tests/**/*.py" = ["S101"]
+
+[format]
+quote-style = "single"
+indent-style = "tabs"
+skip-magic-trailing-comma = false
+line-ending = "auto"
